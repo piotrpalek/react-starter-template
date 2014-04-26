@@ -6,7 +6,8 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.*",
-    "gulp-coffee": "~0.*",
+    "gulp-util": "~2.*",
+    "gulp-coffee": "~1.*",
     "gulp-sass": "~0.*",
     "gulp-watch": "~0.*",
     "webpack": "~1.*",
