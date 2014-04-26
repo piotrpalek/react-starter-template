@@ -1,23 +1,24 @@
 `/** @jsx React.DOM */`
 
-Masthead = require("./Masthead.coffee")
-
-ReactTransitionGroup = React.addons.TransitionGroup
-imageURL = "/images/BladeRunner.gif"
+TodoInput = require("./TodoInput.coffee")
+ListContainer = require("./ListContainer.coffee")
 
 StarterApp = React.createClass
+  getInitialState: ->
+    {
+      listData: []
+    }
+  handleItemAdd: (item) ->
+    items = @state.listData
+    items.push item.value
+    @setState listData: items
+  handleListClear: ->
+    @setState listData: []
   render: () ->
     `(
-      <div className='main'>
-        <Masthead title="React Starter App">
-          This template brings together all the pieces you need to start building your first React app.
-          Gulp is used for orchastrating the build process, and Webpack is used to combine the Javascripts together.
-        </Masthead>
-        <ReactTransitionGroup transitionName="fade">
-          <div className="container">
-            <img className="center-block" src={imageURL} />
-          </div>
-        </ReactTransitionGroup>
+      <div className='todo-container'>
+        <TodoInput onItemAdd={ this.handleItemAdd } onListClear={this.handleListClear} />
+        <ListContainer data={this.state.listData} />
       </div>
     )`
 
