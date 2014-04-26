@@ -10,7 +10,7 @@ This is a starter template for building your first [React](http://facebook.githu
 ## Up and Running
 First, clone the repo...
 
-`git clone git@github.com:johnthethird/react-starter-template.git`
+`git clone git@github.com:piotrpalek/react-starter-template.git`
 
 Then install the bower and npm modules
 
